@@ -1,0 +1,7 @@
+<div class="content"></div>
+<%= flash[:sign] %>
+<% if session[:user_id] %>
+  <%= redirect '/status' %>
+<% else %>
+  <%= erb(:sign_in, :layout => false) %>
+<% end %>

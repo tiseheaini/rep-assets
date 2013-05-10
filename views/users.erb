@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <link media="all" rel="stylesheet" href="/css/style.css" type="text/css" />
+  <link media="all" rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" type="text/css" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <%= erb(:head, :layout => false) %>
+
+  <div class="main">
+    <%= yield %>
+  </div>
+  <div id="footer"></div>
+</body>
+</html>
