@@ -37,7 +37,7 @@ end
 
 post '/u/sign_up' do
   @user = User.new(params[:users]) 
-
+  @user.expire = Time.now
   if @user.save
     session[:user_id] = @user.id
     redirect '/index'

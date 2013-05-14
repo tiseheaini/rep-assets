@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `u_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `u_mail` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `p_salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `p_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `expire` datetime,

@@ -1,7 +1,7 @@
 # encoding: utf-8
 class User < ActiveRecord::Base
 
-  attr_accessible :u_name, :p_salt, :p_hash, :password, :password_confirmation
+  attr_accessible :u_name, :u_mail, :p_salt, :p_hash, :password, :password_confirmation
   validates :u_name, :presence => {:message => "用户名不能为空"}
   validates :u_name, :uniqueness => {:message => "用户名已经有人注册过了"}
   validates :password, :confirmation => {:message => "两次输入的密码不一样"}
