@@ -8,21 +8,31 @@
         <div class="control-group">
           <label class="control-label" for="user[u_name]">帐号</label>
           <div class="controls">
-            <input id="login" name="users[u_name]" type="text"><br />
+            <input id="users_u_name" name="users[u_name]" type="text"><br />
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="user[u_mail]">邮箱</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span>
+              <input id="users_u_mail" style="width:179px;" name="users[u_mail]" type="text" placeholder="example@example.com"><br />
+            </div>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label" for="user[password]">密码</label>
           <div class="controls">
-            <input id="login" name="users[password]" type="password"><br />
+            <input id="users_password" name="users[password]" type="password"><br />
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label" for="user[password_confirmation]">重复</label>
           <div class="controls">
-            <input id="login" name="users[password_confirmation]" type="password"><br />
+            <input id="users_password_confirmation" name="users[password_confirmation]" type="password"><br />
           </div>
         </div>
       </div>
