@@ -27,10 +27,9 @@ post '/u/sign_in' do
 
   if @user
     session[:user_id] = @user.id
-    flash[:sign] = "登录成功"
     redirect '/status'
   else
-    flash[:sign] = "登录失败"
+    flash[:sign_err] = "登录失败"
     redirect '/'
   end
 end
@@ -48,7 +47,7 @@ end
 
 get '/u/sign_out' do
   session[:user_id] = nil
-  flash[:sign] = "退出成功"
+  flash[:sign_succ] = "退出成功"
   redirect '/'
 end
 

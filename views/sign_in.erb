@@ -1,24 +1,42 @@
-<div class="sidebar radius">
-  <span>登录</span>
-  <div class="noticeline"></div>
-  <form class="form-horizontal" accept-charset="UTF-8" action="/u/sign_in" method="post">
-    <div class="control-group">
-      <label class="control-label" style="width:38px;" for="user[u_name]">帐号</label>
-      <div class="controls" style="margin-left:50px;">
-        <input id="login" name="users[u_name]" type="text" <%= "placeholder=#{@user.errors[:u_name].join}" if @user.errors[:u_name] %> ><br />
+<div class="sidebar">
+  <div class="sign-alert">
+    <% if flash[:sign_succ] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <span><%= flash[:sign_succ] %></span>
       </div>
-    </div>
+    <% end %>
 
-    <div class="control-group">
-      <label class="control-label" style="width:38px;" for="user[password]">密码</label>
-      <div class="controls" style="margin-left:50px;">
-        <input id="login" name="users[password]" type="password" <%= "placeholder=#{@user.errors[:password].join}" if @user.errors[:password] %> ><br />
+    <% if flash[:sign_err] %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <span><%= flash[:sign_err] %></span>
       </div>
-    </div>
+    <% end %>
+  </div>
 
-    <input class="form-submit btn btn-success" style="float:right;" name="commit" type="submit" value="登录">
-    <a class="btn" style="float:right;margin-right:10px;" data-toggle="modal" href="#myModal" >注册</a>
-  </form>
-  
-  <%= erb(:sign_up, :layout => false) %>
+  <div class="sign-up radius">
+    <span>登录</span>
+    <div class="noticeline"></div>
+    <form class="form-horizontal" accept-charset="UTF-8" action="/u/sign_in" method="post">
+      <div class="control-group">
+        <label class="control-label" style="width:38px;" for="user[u_name]">帐号</label>
+        <div class="controls" style="margin-left:50px;">
+          <input id="login" name="users[u_name]" type="text" <%= "placeholder=#{@user.errors[:u_name].join}" if @user.errors[:u_name] %> ><br />
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" style="width:38px;" for="user[password]">密码</label>
+        <div class="controls" style="margin-left:50px;">
+          <input id="login" name="users[password]" type="password" <%= "placeholder=#{@user.errors[:password].join}" if @user.errors[:password] %> ><br />
+        </div>
+      </div>
+
+      <input class="form-submit btn btn-success" style="float:right;" name="commit" type="submit" value="登录">
+      <a class="btn" style="float:right;margin-right:10px;" data-toggle="modal" href="#myModal" >注册</a>
+    </form>
+    
+    <%= erb(:sign_up, :layout => false) %>
+  </div>
 </div>

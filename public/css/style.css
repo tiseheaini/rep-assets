@@ -32,6 +32,13 @@ body {
 }
 .sidebar {
   float:right;
+}
+.sign-alert {
+  width: 292px;
+}
+.sign-up {
+  width: 270px;
+  overflow:hidden;
   padding: 18px 10px 23px 10px;
 }
 .radius {
