@@ -53,11 +53,17 @@ end
 
 post '/u/:user/uploads' do
 
-  params[:info].each do |file_name, file|
-    file_path = File.join('/var', 'public', params[:user], file_name)
-    FileUtils.makedirs(File.dirname(file_path)) if !File.directory?(File.dirname(file_path))
-    file_cont = file[:tempfile].read
-    File.open(file_path, "a") {|f| f.puts file_cont } 
+  @user = User.authentication(params[:user], params[:password])
+
+  if @user
+    params[:info].each do |file_name, file|
+      file_path = File.join('/var', 'public', params[:user], file_name)
+      FileUtils.makedirs(File.dirname(file_path)) if !File.directory?(File.dirname(file_path))
+      file_cont = file[:tempfile].read
+      File.open(file_path, "a") {|f| f.puts file_cont } 
+    end
+  else
+    halt 500, 'go away!'
   end
   "success"
 end
