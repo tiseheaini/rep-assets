@@ -31,7 +31,7 @@ post '/u/sign_in' do
     redirect '/status'
   else
     flash[:sign] = "登录失败"
-    redirect '/index'
+    redirect '/'
   end
 end
 
@@ -40,10 +40,16 @@ post '/u/sign_up' do
   @user.expire = Time.now
   if @user.save
     session[:user_id] = @user.id
-    redirect '/index'
+    redirect '/'
   else
     erb :new 
   end
+end
+
+get '/u/sign_out' do
+  session[:user_id] = nil
+  flash[:sign] = "退出成功"
+  redirect '/'
 end
 
 post '/u/:user/uploads' do
