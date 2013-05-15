@@ -28,9 +28,10 @@ body {
 }
 .content {
   float:left;
-  padding: 18px 10px 23px 10px;
+  padding: 0px 10px 23px 10px;
 }
 .sidebar {
+  margin-top: 20px;
   float:right;
 }
 .sign-alert {
