@@ -1,9 +1,0 @@
-<div class="content">
-  <p style="font-size:18px;margin-bottom:5px;">相同的资源我们加载速度更快</p>
-  <img src="xuanchuan3.jpg" alt="" />
-</div>
-<% if session[:user_id] %>
-  <%= redirect '/status' %>
-<% else %>
-  <%= erb(:sign_in, :layout => false) %>
-<% end %>
