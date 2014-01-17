@@ -16,7 +16,7 @@ post '/u/:user/picture_save_as' do
     next if picture.empty?
     cartoon_page += 1
     file_name = cartoon_page.to_s + File.extname(picture[:filename]).downcase
-    file_path = File.join('/var', 'public', 'uploads', 'single', permalink, episode, file_name)
+    file_path = File.join('/home/tiny', 'mhpublic', 'uploads', 'single', permalink, episode, file_name)
     FileUtils.makedirs(File.dirname(file_path)) if !File.directory?(File.dirname(file_path))
     File.open(file_path, 'wb'){ |pic| pic.write(picture[:tempfile].read); picture[:tempfile].close }
   end
