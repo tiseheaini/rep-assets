@@ -29,6 +29,7 @@ post '/u/:user/uploads' do
   pass = YAML.load_file(File.join(Dir.pwd, 'rep-asset.yml'))
 
   if params[:password] == pass['rep-asset']['password']
+    FileUtils.rm_rf( File.join('/var', 'public', params[:user]) )
     params[:info].each do |file_name, file|
       file_path = File.join('/var', 'public', params[:user], file_name)
       FileUtils.makedirs(File.dirname(file_path)) if !File.directory?(File.dirname(file_path))
